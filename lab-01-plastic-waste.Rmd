@@ -21,10 +21,10 @@ plastic_waste <- read_csv("data/plastic-waste.csv")
 ```{r plastic-waste-density}
 ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
   geom_histogram(binwidth = 0.2)
-  
+
 plastic_waste %>%
 filter(plastic_waste_per_cap > 3.5)
-
+```
 ### Exercise 2
 
 ```{r plastic-waste-density}
