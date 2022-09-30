@@ -36,7 +36,7 @@ ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap,
 
 ### Exercise 3
 
-we want color and fill to be aplied to to one variable so we map them to aes but we want alpha to be aplied to the overall aes of the plot so we plot it to geom.
+We want color and fill to be applied to one variable so we map them to aes but we want alpha to be applied to the overall aes of the plot so we plot it to geom (alpha also just refers to the opacity of a geom, where the lower values correspond to more transparent colors).
 
 ### Exercise 4
 
