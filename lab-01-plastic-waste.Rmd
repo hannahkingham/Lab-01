@@ -31,7 +31,7 @@ filter(plastic_waste_per_cap > 3.5)
 ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap, 
           color = continent, 
           fill =  continent,)) +
-  geom_density(alpha = 0.7)
+  geom_density(alpha = 0.5)
 ```
 
 ### Exercise 3
@@ -40,10 +40,15 @@ We want color and fill to be applied to one variable so we map them to aes but w
 
 ### Exercise 4
 
-*Remove this text, and add your answer for Exercise 4 here.*
+Violin plots are very similar to boxplots with the exception that they show the density of the variable. With the density information, violin plots reveal the structure in the data while a boxplot does not and this makes violin plots overall better (provided you have enough data to estimate the density).
+
+As for the features apparent in the boxplot and not in the violin plot - violin plots are potentially misleading for smaller sample sizes, where the density plots can appear to show interesting features. Box plots provide a coarser summary of the data, they seem safer to use with smaller samples. For very small sample sizes, violin plots provide no direct indication that the sample is very small, worsening the above problem.
 
 ```{r plastic-waste-violin}
-# remove this comment and add the code for Exercise 4 here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_violin(trim=FALSE)
 ```
 
 ### Exercise 5
