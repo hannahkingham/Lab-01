@@ -1,6 +1,6 @@
 ---
 title: "Lab 01 - Plastic waste"
-author: "Hannah, Joana, Andrew, max"
+author: "Hannah, Joana, Andrew, Max"
 date: "`r Sys.Date()`"
 output: html_document
 ---
