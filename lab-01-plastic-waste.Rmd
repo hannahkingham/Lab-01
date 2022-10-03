@@ -18,7 +18,7 @@ plastic_waste <- read_csv("data/plastic-waste.csv")
 ```
 
 ### Exercise 1
-```{r plastic-waste-density}
+```{r plastic-waste-hist}
 ggplot(data = plastic_waste, aes(x = plastic_waste_per_cap)) +
   geom_histogram(binwidth = 0.2)
 
@@ -44,6 +44,8 @@ Violin plots are very similar to boxplots with the exception that they show the 
 
 As for the features apparent in the boxplot and not in the violin plot - violin plots are potentially misleading for smaller sample sizes, where the density plots can appear to show interesting features. Box plots provide a coarser summary of the data, they seem safer to use with smaller samples. For very small sample sizes, violin plots provide no direct indication that the sample is very small, worsening the above problem.
 
+The violin plots, plotted by the code below, don't show the summary statistics such as the median, IQR etc.
+
 ```{r plastic-waste-violin}
 ggplot(data = plastic_waste, 
        mapping = aes(x = continent, 
@@ -53,10 +55,15 @@ ggplot(data = plastic_waste,
 
 ### Exercise 5
 
-*Remove this text, and add your answer for Exercise 5 here.*
+From this plot, the trend seems to be that as plastic waste per capita increases, the mismanaged plastic waste per capita also increases. There are both large and small increases in the mismanaged waste but in general, it still increases.
 
 ```{r plastic-waste-mismanaged}
-# remove this comment and add the code for Exercise 5 here
+ggplot(data = plastic_waste,
+       mapping = aes(
+         x = plastic_waste_per_cap,
+         y = mismanaged_plastic_waste_per_cap)) +
+geom_point()
+
 ```
 
 ### Exercise 6
