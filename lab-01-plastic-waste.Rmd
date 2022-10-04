@@ -69,7 +69,7 @@ geom_point()
 
 ### Exercise 6
 
-*Remove this text, and add your answer for Exercise 6 here.*
+There doesnt seem to be any clear trend between continents and mismanaged plastic waste. Africa seems to have a linear, rapidly increasing, trend when just considering one continent
 
 ```{r plastic-waste-mismanaged-continent}
 ggplot(data = plastic_waste,
