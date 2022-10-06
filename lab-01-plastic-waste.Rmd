@@ -69,7 +69,7 @@ geom_point()
 
 ### Exercise 6
 
-There doesnt seem to be any clear trend between continents and mismanaged plastic waste. Africa seems to have a linear, rapidly increasing, trend when just considering one continent
+There doesnt seem to be any clear trend between continents and mismanaged plastic waste. Africa seems to have a linear, rapidly increasing, trend when just considering one continent.
 
 ```{r plastic-waste-mismanaged-continent}
 ggplot(data = plastic_waste,
@@ -85,12 +85,22 @@ geom_point()
 *Remove this text, and add your answer for Exercise 7 here.*
 
 ```{r plastic-waste-population-total}
-# remove this comment and add the code for the first plot for Exercise 7 here
+ggplot(data = plastic_waste, mapping  = aes(
+  x = total_pop,
+  y = plastic_waste_per_cap)) +
+  geom_point()
 ```
 
 ```{r plastic-waste-population-coastal}
-# remove this comment and add the code for the second plot for Exercise 7 here
+ggplot(data = plastic_waste, mapping  = aes(
+  x = coastal_pop,
+  y = plastic_waste_per_cap)) +
+  geom_point()
+
 ```
+There still doesn't appear to be any clear trend. It is very difficult to see clearly around the origin. 
+
+As costal population increases, plastic waste per capita seems to stay roughly constant.
 
 ### Exercise 8
 
