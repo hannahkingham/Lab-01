@@ -82,7 +82,9 @@ geom_point()
 
 ### Exercise 7
 
-*Remove this text, and add your answer for Exercise 7 here.*
+There still doesn't appear to be any clear trend. It is very difficult to see clearly around the origin. 
+
+As costal population increases, plastic waste per capita seems to stay roughly constant.
 
 ```{r plastic-waste-population-total}
 ggplot(data = plastic_waste, mapping  = aes(
@@ -98,19 +100,31 @@ ggplot(data = plastic_waste, mapping  = aes(
   geom_point()
 
 ```
-There still doesn't appear to be any clear trend. It is very difficult to see clearly around the origin. 
 
-As costal population increases, plastic waste per capita seems to stay roughly constant.
 
 ### Exercise 8
 
-*Remove this text, and add your answer for Exercise 8 here.*
+The plastic waste per capita increases and then decreases, it increases as the coastal population proportion approaches 1 and then roughly decreases after this
 
 ```{r recreate-viz}
 plastic_waste_edit <- plastic_waste %>% 
   mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
   filter(plastic_waste_per_cap < 3)
 
-# remove this comment and add the code for Exercise 8 here
+ggplot(data = plastic_waste_edit,
+       mapping = aes(
+         x = coastal_pop_prop,
+         y = plastic_waste_per_cap,
+         )) +
+  geom_point(mapping = aes(
+    colour = continent))+
+  geom_smooth(color = "black") +
+  labs(title = "Plastic Waste vs. Coastal Population Proportion", 
+       subtitle = "By Continent",
+       x = "Coastal Population Proportion (coastal/total population)",
+       y = "Plastic Waste Per Capita",
+       colour = "Continent")
+  
+    
 ```
 
